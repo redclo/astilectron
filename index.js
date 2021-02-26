@@ -492,16 +492,16 @@ function windowCreateFinish(json) {
                     astilectron.registerCallback('` + consts.callbackNames.webContentsMessage + `', {message: message}, callback, '`+ consts.eventNames.ipcEventMessage +`');
                 },
                 showErrorBox: function(title, content) {
-                    dialog.showErrorBox(title, content)
+                    return dialog.showErrorBox(title, content)
                 },
                 showMessageBox: function(options, callback) {
-                    dialog.showMessageBox(null, options, callback)
+                    return dialog.showMessageBox(null, options, callback)
                 },
                 showOpenDialog: function(options, callback) {
-                    dialog.showOpenDialog(null, options, callback)
+                    return dialog.showOpenDialog(null, options, callback)
                 },
                 showSaveDialog: function(options, callback) {
-                    dialog.showSaveDialog(null, options, callback)
+                    return dialog.showSaveDialog(null, options, callback)
                 }
             };
             ipcRenderer.on('`+ consts.eventNames.ipcCmdMessageCallback +`', function(event, message) {
